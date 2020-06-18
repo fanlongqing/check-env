@@ -49,6 +49,8 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getY());
         Assert.assertEquals("E", marsRoverPosition.getDirection());
     }
+
+
     @Test
     public void should_return_negative_1_0_W_given_0_0_W_and_M() {
         //given
@@ -84,6 +86,19 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getX());
         Assert.assertEquals(0, marsRoverPosition.getY());
         Assert.assertEquals("N", marsRoverPosition.getDirection());
+    }
+
+    @Test
+    public void should_return_0_negative_1_0_S_given_0_0_S_and_M() {
+        //given
+        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "S");
+        MarsRover marsRover = new MarsRover(initPosition);
+        //when
+        MarsRoverPosition marsRoverPosition = marsRover.execute("M");
+        //then
+        Assert.assertEquals(0, marsRoverPosition.getX());
+        Assert.assertEquals(-1, marsRoverPosition.getY());
+        Assert.assertEquals("S", marsRoverPosition.getDirection());
     }
 
 }
