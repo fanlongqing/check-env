@@ -20,7 +20,9 @@ public class FizzBuzz {
         if(number%3==0 && number%7==0){
             return "FizzWhizz";
         }
-
+        if(number%5==0 && number%7==0){
+            return "BuzzWhizz";
+        }
         return String.valueOf(number);
     }
 }
