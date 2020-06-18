@@ -168,15 +168,27 @@ public class MarsRoverTest {
         MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "W");
         MarsRover marsRover = new MarsRover(initPosition);
         String seriesCommands="MLR";
-        MarsRoverPosition marsRoverPosition=null;
         //when
-        for(int i=0;i<seriesCommands.length();i++) {
-            marsRoverPosition= marsRover.execute( String.valueOf(seriesCommands.charAt(i)));
-        }
+        MarsRoverPosition marsRoverPosition= marsRover.execute(seriesCommands);
         //then
         Assert.assertEquals(-1, marsRoverPosition.getX());
         Assert.assertEquals(0, marsRoverPosition.getY());
         Assert.assertEquals("W", marsRoverPosition.getDirection());
+    }
+    @Test
+    public void should_return_2_0_E_given_0_0_S_and_series_LMMLR() {
+        //given
+        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "S");
+        MarsRover marsRover = new MarsRover(initPosition);
+        String seriesCommands="LMMLR";
+
+        //when
+        MarsRoverPosition marsRoverPosition= marsRover.execute(seriesCommands);
+
+        //then
+        Assert.assertEquals(2, marsRoverPosition.getX());
+        Assert.assertEquals(0, marsRoverPosition.getY());
+        Assert.assertEquals("E", marsRoverPosition.getDirection());
     }
 
 
