@@ -35,8 +35,19 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getX());
         Assert.assertEquals(1, marsRoverPosition.getY());
         Assert.assertEquals("N", marsRoverPosition.getDirection());
-
     }
-
+    @Test
+    public void should_return_0_0_E_given_0_0_N_and_R() {
+        //given
+        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "N");
+        MarsRover marsRover = new MarsRover(initPosition);
+        //when
+        MarsRoverPosition marsRoverPosition = marsRover.execute("R");
+        //then
+//        Assert.assertNotNull(marsRoverPosition);
+        Assert.assertEquals(0, marsRoverPosition.getX());
+        Assert.assertEquals(0, marsRoverPosition.getY());
+        Assert.assertEquals("E", marsRoverPosition.getDirection());
+    }
 
 }

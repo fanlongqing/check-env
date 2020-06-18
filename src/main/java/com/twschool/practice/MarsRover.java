@@ -16,6 +16,9 @@ public class MarsRover {
         if("M".equals(comands)) {
             marsRoverPosition.setY(marsRoverPosition.getY()+1);
         }
+        if("R".equals(comands)) {
+            marsRoverPosition.setDirection("E");
+        }
         return marsRoverPosition;
     }
 }
