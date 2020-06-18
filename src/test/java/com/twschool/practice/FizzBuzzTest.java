@@ -46,6 +46,15 @@ public class FizzBuzzTest {
         //then
         Assert.assertEquals("Whizz", c);
     }
+    @Test
+    public void should_return_FizzBuzz_given_15() {
+        //given
+
+        //when
+        String c = fizzBuzz.say1(15);
+        //then
+        Assert.assertEquals("FizzBuzz", c);
+    }
 
 
 
