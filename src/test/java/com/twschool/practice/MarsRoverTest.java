@@ -10,6 +10,19 @@ import java.util.List;
 
 public class MarsRoverTest {
     @Test
+    public void should_return_0_1_N_given_0_0_N_and_M() {
+        //given
+        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "N");
+        MarsRover marsRover = new MarsRover(initPosition);
+        //when
+        MarsRoverPosition marsRoverPosition = marsRover.execute("M");
+        //then
+//        Assert.assertNotNull(marsRoverPosition);
+        Assert.assertEquals(0, marsRoverPosition.getX());
+        Assert.assertEquals(1, marsRoverPosition.getY());
+        Assert.assertEquals("N", marsRoverPosition.getDirection());
+    }
+    @Test
     public void should_return_0_0_W_given_0_0_N_and_L() {
         //given
         MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "N");
@@ -23,19 +36,7 @@ public class MarsRoverTest {
         Assert.assertEquals("W", marsRoverPosition.getDirection());
 
     }
-    @Test
-    public void should_return_0_1_N_given_0_0_N_and_M() {
-        //given
-        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "N");
-        MarsRover marsRover = new MarsRover(initPosition);
-        //when
-        MarsRoverPosition marsRoverPosition = marsRover.execute("M");
-        //then
-//        Assert.assertNotNull(marsRoverPosition);
-        Assert.assertEquals(0, marsRoverPosition.getX());
-        Assert.assertEquals(1, marsRoverPosition.getY());
-        Assert.assertEquals("N", marsRoverPosition.getDirection());
-    }
+
     @Test
     public void should_return_0_0_E_given_0_0_N_and_R() {
         //given
@@ -161,4 +162,22 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getY());
         Assert.assertEquals("S", marsRoverPosition.getDirection());
     }
+    @Test
+    public void should_return_negative_1_0_W_given_0_0_W_and_series_MLR() {
+        //given
+        MarsRoverPosition initPosition = new MarsRoverPosition(0, 0, "W");
+        MarsRover marsRover = new MarsRover(initPosition);
+        String seriesCommands="MLR";
+        MarsRoverPosition marsRoverPosition=null;
+        //when
+        for(int i=0;i<seriesCommands.length();i++) {
+            marsRoverPosition= marsRover.execute( String.valueOf(seriesCommands.charAt(i)));
+        }
+        //then
+        Assert.assertEquals(-1, marsRoverPosition.getX());
+        Assert.assertEquals(0, marsRoverPosition.getY());
+        Assert.assertEquals("W", marsRoverPosition.getDirection());
+    }
+
+
 }
