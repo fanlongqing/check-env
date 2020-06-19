@@ -57,4 +57,14 @@ public class AnswerTest {
         //then
         Assert.assertEquals("0A3B",result);
     }
+    @Test
+    public void should_return_0A0B_when_compare_with_1234_given_answer_7895(){
+        //given
+//        int [] userAnswer={1,2,3,4};
+        GameAnswer answer=new GameAnswer("1 2 3 4");
+        //when
+        String result=answer.check("7 8 9 5");
+        //then
+        Assert.assertEquals("0A0B",result);
+    }
 }
