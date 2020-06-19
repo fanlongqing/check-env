@@ -16,7 +16,7 @@ public class AnswerTest {
     }
 
     @Test
-    public void should_return_0A4B_when_compare_with_1234_given_answer_4321(){
+    public void should_return_0A4B_when_compare_with_4321_given_answer_1234(){
         //given
 //        int [] userAnswer={1,2,3,4};
         GameAnswer answer=new GameAnswer("1 2 3 4");
@@ -25,9 +25,8 @@ public class AnswerTest {
         //then
         Assert.assertEquals("0A4B",result);
     }
-
     @Test
-    public void should_return_1A3B_when_compare_with_1234_given_answer_1423(){
+    public void should_return_1A3B_when_compare_with_1423_given_answer_1234s(){
         //given
 //        int [] userAnswer={1,2,3,4};
         GameAnswer answer=new GameAnswer("1 2 3 4");
@@ -37,7 +36,7 @@ public class AnswerTest {
         Assert.assertEquals("1A3B",result);
     }
     @Test
-    public void should_return_1A1B_when_compare_with_1234_given_answer_1356(){
+    public void should_return_1A1B_when_compare_with_1356_given_answer_1234(){
         //given
 //        int [] userAnswer={1,2,3,4};
         GameAnswer answer=new GameAnswer("1 2 3 4");
@@ -46,9 +45,8 @@ public class AnswerTest {
         //then
         Assert.assertEquals("1A1B",result);
     }
-
     @Test
-    public void should_return_0A3B_when_compare_with_1234_given_answer_7423(){
+    public void should_return_0A3B_when_compare_with_7423_given_answer_1234(){
         //given
 //        int [] userAnswer={1,2,3,4};
         GameAnswer answer=new GameAnswer("1 2 3 4");
@@ -58,7 +56,7 @@ public class AnswerTest {
         Assert.assertEquals("0A3B",result);
     }
     @Test
-    public void should_return_0A0B_when_compare_with_1234_given_answer_7895(){
+    public void should_return_0A0B_when_compare_with_7895_given_answer_1234(){
         //given
 //        int [] userAnswer={1,2,3,4};
         GameAnswer answer=new GameAnswer("1 2 3 4");
