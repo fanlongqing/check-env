@@ -30,10 +30,20 @@ public class AnswerTest {
     public void should_return_1A3B_when_compare_with_1234_given_answer_1423(){
         //given
 //        int [] userAnswer={1,2,3,4};
-        GameAnswer answer=new GameAnswer("1 4 2 3");
+        GameAnswer answer=new GameAnswer("1 2 3 4");
         //when
-        String result=answer.check("4 3 2 1");
+        String result=answer.check("1 4 2 3");
         //then
         Assert.assertEquals("1A3B",result);
+    }
+    @Test
+    public void should_return_1A1B_when_compare_with_1234_given_answer_1356(){
+        //given
+//        int [] userAnswer={1,2,3,4};
+        GameAnswer answer=new GameAnswer("1 2 3 4");
+        //when
+        String result=answer.check("1 3 5 6");
+        //then
+        Assert.assertEquals("1A1B",result);
     }
 }
