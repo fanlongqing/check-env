@@ -46,4 +46,15 @@ public class AnswerTest {
         //then
         Assert.assertEquals("1A1B",result);
     }
+
+    @Test
+    public void should_return_0A3B_when_compare_with_1234_given_answer_7423(){
+        //given
+//        int [] userAnswer={1,2,3,4};
+        GameAnswer answer=new GameAnswer("1 2 3 4");
+        //when
+        String result=answer.check("7 4 2 3");
+        //then
+        Assert.assertEquals("0A3B",result);
+    }
 }
