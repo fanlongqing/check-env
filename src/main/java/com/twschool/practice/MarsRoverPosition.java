@@ -35,4 +35,49 @@ public class MarsRoverPosition {
     }
 
 
+    public void move(String comands,String direction) {
+        if("N".equals(direction)){
+            if ("M".equals(comands)) {
+            setY(getY() + 1);
+            }
+             if ("L".equals(comands)) {
+                setDirection("W");
+             }
+            if ("R".equals(comands)) {
+                setDirection("E");
+             }
+        }else if("W".equals(direction)){
+            if ("M".equals(comands)) {
+                setX(getX() - 1);
+            }
+            if ("L".equals(comands)) {
+                setDirection("S");
+            }
+            if ("R".equals(comands)) {
+                setDirection("N");
+            }
+        }else if("S".equals(direction)){
+
+            if ("M".equals(comands)) {
+                setY(getY() - 1);
+            }
+            if ("L".equals(comands)) {
+                setDirection("E");
+            }
+            if ("R".equals(comands)) {
+                setDirection("W");
+            }
+        }   else if("E".equals(direction)){
+            if ("M".equals(comands)) {
+                setX(getX() + 1);
+            }
+            if ("L".equals(comands)) {
+                setDirection("N");
+            }
+            if ("R".equals(comands)) {
+                setDirection("S");
+            }
+        }
+
+    }
 }
