@@ -25,4 +25,15 @@ public class AnswerTest {
         //then
         Assert.assertEquals("0A4B",result);
     }
+
+    @Test
+    public void should_return_1A3B_when_compare_with_1234_given_answer_1423(){
+        //given
+//        int [] userAnswer={1,2,3,4};
+        GameAnswer answer=new GameAnswer("1 4 2 3");
+        //when
+        String result=answer.check("4 3 2 1");
+        //then
+        Assert.assertEquals("1A3B",result);
+    }
 }
