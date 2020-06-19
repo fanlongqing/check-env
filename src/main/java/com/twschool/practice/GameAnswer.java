@@ -12,11 +12,15 @@ public class GameAnswer {
 
     public String check(String userAnswerString) {
         List<String> userAnswerNumber= Arrays.asList(userAnswerString.split(" "));
-//        for (int index=0;index<userAnswerNumber.size();index++){
-//            if(answerNumber.get(index).equals(userAnswerNumber.get(index))){
-//
-//
-//            }        }
-        return "4A0B";
+        int ANumber=0;
+        int BNumber=0;
+        for (int index=0;index<userAnswerNumber.size();index++){
+            if(answerNumber.get(index).equals(userAnswerNumber.get(index))){
+                ANumber++;
+            }else if(answerNumber.contains(userAnswerNumber.get(index))){
+                BNumber++;
+            }
+        }
+        return  ANumber+"A"+BNumber+"B";
     }
 }
