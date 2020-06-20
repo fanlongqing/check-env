@@ -11,6 +11,8 @@ public class GuessNumberGame {
         String result= gameAnswer.check(userAnswerString);
         if("4A0B".equals(result)){
              gameStatus = GameStatus.SUCCED;
+        }else {
+            gameStatus = GameStatus.CONTINUED;
         }
         return  result;
     }
