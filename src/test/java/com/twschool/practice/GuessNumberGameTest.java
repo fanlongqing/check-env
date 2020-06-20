@@ -14,6 +14,18 @@ public class GuessNumberGameTest {
         String result=guessNumberGame.guess("1 2 3 4");
         //then
         Assert.assertEquals("0A4B",result);
-
     }
+    @Test
+    public void should_return_succed_when_compare_get_status_after_input_1234_given_game_with_answer_1234(){
+        //given
+        GameAnswer gameAnswer =new GameAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame =new GuessNumberGame (gameAnswer);
+        String result=guessNumberGame.guess("1 2 3 4");
+        //When
+        GameStatus gameStatus=guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.SUCCED,gameStatus);
+    }
+
+
 }
