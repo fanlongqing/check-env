@@ -54,5 +54,20 @@ public class GuessNumberGameTest {
         //then
         Assert.assertEquals(GameStatus.FAILD,gameStatus);
     }
+    @Test
+    public void should_return_continued_when_compare_get_status_after_input_1243_5_given_game_with_answer_1234(){
+        //given
+        GameAnswer gameAnswer =new GameAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame =new GuessNumberGame (gameAnswer);
+        guessNumberGame.guess("1 2 4 3");
+        guessNumberGame.guess("1 2 4 3");
+        guessNumberGame.guess("1 2 4 3");
+        guessNumberGame.guess("1 2 4 3");
+        guessNumberGame.guess("1 2 4 3");
 
+        //When
+        GameStatus gameStatus=guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.CONTINUED,gameStatus);
+    }
 }
